@@ -1,0 +1,74 @@
+.comments {
+  h2 {
+    margin-bottom: 1rem;
+  }
+  ol {
+    padding-left: 2rem;
+  }
+
+  .comment-meta {
+    .avatar {
+      float: left;
+      margin-right: 1rem;
+      margin-top: 5px;
+    }
+  }
+
+  .comment-body {
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    margin-bottom: 1rem;
+  }
+
+  .children {
+    padding-left: 2rem;
+    border-left: 1px solid #eee;
+  }
+}
+
+.comment-form {
+  label,input {
+    line-height: 2rem;
+    display: block;
+  }
+
+  input, textarea {
+    width: 100%;
+  }
+
+  .form-allowed-tags {
+    font-size: 0.75rem;
+  }
+
+  .form-submit, .submit {
+    font-size: 2rem;
+    height: 3rem;
+    width: 100%;
+  }
+
+  @media (min-width: 30em) {
+    label { float: left; }
+
+    input, textarea {
+      float: right;
+      width: 75%;
+    }
+
+    input { height: 2rem; }
+
+    p {
+      clear: both;
+      padding-bottom: 2rem;
+
+      &:first-child {
+        padding-bottom: inherit;
+      }
+    }
+
+    .comment-form-comment {
+      padding-bottom: 6rem;
+    }
+  }
+}

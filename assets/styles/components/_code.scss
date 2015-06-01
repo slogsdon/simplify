@@ -1,0 +1,32 @@
+// Code
+//
+// Inline and block-level code snippets. Includes tweaks to syntax highlighted
+// snippets from Pygments/Rouge and Gist embeds.
+
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 85%;
+  background-color: #f9f9f9;
+}
+
+code {
+  padding: .25em .5em;
+  color: #bf616a;
+  border-radius: 3px;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1em;
+
+  code {
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+}

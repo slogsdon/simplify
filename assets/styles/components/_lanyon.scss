@@ -1,0 +1,46 @@
+//  ___
+// /\_ \
+// \//\ \      __      ___   __  __    ___     ___
+//   \ \ \   /'__`\  /' _ `\/\ \/\ \  / __`\ /' _ `\
+//    \_\ \_/\ \_\.\_/\ \/\ \ \ \_\ \/\ \_\ \/\ \/\ \
+//    /\____\ \__/.\_\ \_\ \_\/`____ \ \____/\ \_\ \_\
+//    \/____/\/__/\/_/\/_/\/_/`/___/> \/___/  \/_/\/_/
+//                               /\___/
+//                               \/__/
+//
+// Designed, built, and released under MIT license by @mdo. Learn more at
+// https://github.com/poole/lanyon.
+ 
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #313131;
+  letter-spacing: -.025rem;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+}
+
+.masthead {
+  border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 48em) {
+  .masthead-title {
+    text-align: center;
+  }
+  .masthead-title small {
+    display: none;
+  }
+}

@@ -1,12 +1,14 @@
 {
   "dependencies": {
     "main.js": {
+      "bower": ["modernizr"],
       "files": [
         "scripts/main.js"
       ],
       "main": true
     },
     "main.css": {
+      "bower": ["fontawesome"],
       "files": [
         "styles/main.scss"
       ],
@@ -16,12 +18,9 @@
       "files": [
         "styles/editor-style.scss"
       ]
-    },
-    "modernizr.js": {
-      "bower": ["modernizr"]
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "http://localhost:8889"
   }
 }

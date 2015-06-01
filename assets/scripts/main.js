@@ -1,77 +1,46 @@
-/* ========================================================================
- * DOM-based Routing
- * Based on http://goo.gl/EUTi53 by Paul Irish
- *
- * Only fires on body classes that match. If a body class contains a dash,
- * replace the dash with an underscore when adding it to the object below.
- *
- * .noConflict()
- * The routing is enclosed within an anonymous function so that you can
- * always reference jQuery with $, even when in .noConflict() mode.
- * ======================================================================== */
+/*global window*/
+(function (window, document) {
+  'use strict';
+  var toggle     = document.querySelector('.sidebar-toggle');
+  var sidebar    = document.querySelector('#sidebar');
+  var checkbox   = document.querySelector('#sidebar-checkbox');
+  var twitter    = document.getElementById('twitter');
+  var facebook   = document.getElementById('facebook');
+  var googlePlus = document.getElementById('google-plus');
 
-(function($) {
-
-  // Use this variable to set up the common and page specific functions. If you
-  // rename this variable, you will also need to rename the namespace below.
-  var Sage = {
-    // All pages
-    'common': {
-      init: function() {
-        // JavaScript to be fired on all pages
-      },
-      finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
-      }
-    },
-    // Home page
-    'home': {
-      init: function() {
-        // JavaScript to be fired on the home page
-      },
-      finalize: function() {
-        // JavaScript to be fired on the home page, after the init JS
-      }
-    },
-    // About us page, note the change from about-us to about_us.
-    'about_us': {
-      init: function() {
-        // JavaScript to be fired on the about us page
-      }
+  function listen(target, event, callback) {
+    if (target.addEventListener) {
+      target.addEventListener(event, callback, false);
+    } else if (target.attachEvent) {
+      target.attachEvent(event, callback, false);
     }
-  };
+  }
 
-  // The routing fires all common scripts, followed by the page specific scripts.
-  // Add additional events for more control over timing e.g. a finalize event
-  var UTIL = {
-    fire: function(func, funcname, args) {
-      var fire;
-      var namespace = Sage;
-      funcname = (funcname === undefined) ? 'init' : funcname;
-      fire = func !== '';
-      fire = fire && namespace[func];
-      fire = fire && typeof namespace[func][funcname] === 'function';
+  listen(document, 'click', function (e) {
+    var target = e.target;
 
-      if (fire) {
-        namespace[func][funcname](args);
-      }
-    },
-    loadEvents: function() {
-      // Fire common init JS
-      UTIL.fire('common');
+    if (!checkbox.checked ||
+        sidebar.contains(target) ||
+        (target === checkbox || target === toggle)) { return; }
 
-      // Fire page-specific init JS, and then finalize JS
-      $.each(document.body.className.replace(/-/g, '_').split(/\s+/), function(i, classnm) {
-        UTIL.fire(classnm);
-        UTIL.fire(classnm, 'finalize');
-      });
+    checkbox.checked = false;
+  });
 
-      // Fire common finalize JS
-      UTIL.fire('common', 'finalize');
-    }
-  };
+  // Social sharing links
+  if (twitter) {
+    listen(twitter, 'click', function (e) {
+      e.preventDefault();
+      window.open(this.href, 'twitter-share', 'width=550,height=235');
+    });
 
-  // Load Events
-  $(document).ready(UTIL.loadEvents);
+    listen(facebook, 'click', function (e) {
+      e.preventDefault();
+      window.open(this.href, 'facebook-share', 'width=580,height=296');
+    });
 
-})(jQuery); // Fully reference jQuery after this point.
+    listen(googlePlus, 'click', function (e) {
+      e.preventDefault();
+      window.open(this.href, 'google-plus-share', 'width=490,height=530');
+    });
+  }
+}(window, window.document));
