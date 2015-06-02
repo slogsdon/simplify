@@ -8,7 +8,7 @@
   "private": true,
   "dependencies": {
     "modernizr": "https://github.com/Modernizr/Modernizr.git#2.8.2",
-    "fontawesome": "~4.3.0"
+    "fontawesome": "https://github.com/FortAwesome/Font-Awesome.git#~4.3.0"
   },
   "overrides": {
     "modernizr": {
