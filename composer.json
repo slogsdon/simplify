@@ -1,0 +1,19 @@
+{
+    "name": "slogsdon/simplify",
+    "description": "Simplify is a lean, content-first theme based the Jekyll theme Lanyon (http://getpoole.com/lanyon/) and uses the WordPress starter theme Sage as a base.",
+    "keywords": ["wp","wordpress", "simplify", "roots", "sage", "jekyll", "lanyon"],
+    "homepage": "https://github.com/slogsdon/simplify",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shane Logsdon",
+            "email": "shane@shanelogsdon.com",
+            "homepage": "https://www.slogsdon.com",
+            "role": "Developer"
+        }
+    ],
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
